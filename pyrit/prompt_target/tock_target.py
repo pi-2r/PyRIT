@@ -57,3 +57,7 @@ class TockTarget(PromptTarget):
             raise ValueError("Invalid Tock response.")
         logger.info(f"Response received from Tock: {answer}")
         return answer
+
+    def set_system_prompt(self, system_prompt: str, conversation_id=None, attack_identifier=None, labels=None):
+        """Sets a system prompt for compatibility, ignores conversation_id, attack_identifier, and labels."""
+        self._system_prompt = system_prompt
